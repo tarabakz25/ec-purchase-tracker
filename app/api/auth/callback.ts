@@ -8,7 +8,9 @@ export default async function handler(
   const { code } = req.query;
 
   if (code) {
-    const { error} = await supabase.auth.exchangeCodeForSession(code as string)
+    const { error } = await supabase.auth.exchangeCodeForSession(
+      code as string
+    );
     if (error) {
       console.error(error);
     }
